@@ -1,0 +1,284 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp"
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "trainByDomain": false,
+          "useStemDict": true
+        },
+        "stemDict": {
+          "are,how,you": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          },
+          "meet,nice,to,you": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          },
+          "beenn,have,how,you": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          },
+          "are,how,ya": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          },
+          "bonjiour": {
+            "intent": "agent.greeting",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "agent.greeting": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "agent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "agent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "agent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "agent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how have you beenn",
+            "intent": "agent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are ya",
+            "intent": "agent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "bonjiour",
+            "intent": "agent.greeting"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "how": 1,
+              "are": 1,
+              "you": 1,
+              "hello": 1,
+              "hi": 1,
+              "nice": 1,
+              "to": 1,
+              "meet": 1,
+              "have": 1,
+              "beenn": 1,
+              "ya": 1,
+              "bonjiour": 1
+            },
+            "intents": {
+              "agent.greeting": 1
+            },
+            "intentFeatures": {
+              "agent.greeting": [
+                "how",
+                "are",
+                "you",
+                "hello",
+                "hi",
+                "nice",
+                "to",
+                "meet",
+                "have",
+                "beenn",
+                "ya",
+                "bonjiour"
+              ]
+            },
+            "neuralNetwork": {
+              "features": [
+                "how",
+                "are",
+                "you",
+                "hello",
+                "hi",
+                "nice",
+                "to",
+                "meet",
+                "have",
+                "beenn",
+                "ya",
+                "bonjiour",
+                "nonefeature"
+              ],
+              "intents": [
+                "agent.greeting",
+                "None"
+              ],
+              "perceptrons": [
+                [
+                  2.311992883682251,
+                  1.5552698373794556,
+                  1.8215874433517456,
+                  5.620786666870117,
+                  5.604864120483398,
+                  1.2756637334823608,
+                  1.2756637334823608,
+                  1.2756637334823608,
+                  0.7567229866981506,
+                  0.7567229866981506,
+                  1.7660681009292603,
+                  5.577864170074463,
+                  -6.693596839904785,
+                  6.845490231802491
+                ],
+                [
+                  -0.8160824775695801,
+                  -0.6615639328956604,
+                  -0.7789302468299866,
+                  -1.8372989892959595,
+                  -1.825488805770874,
+                  -0.36822062730789185,
+                  -0.36822062730789185,
+                  -0.36822062730789185,
+                  -0.1545185148715973,
+                  -0.1545185148715973,
+                  -0.4053727984428406,
+                  -1.8085157871246338,
+                  10.42805004119873,
+                  1.890518246786755
+                ]
+              ],
+              "perceptronSettings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "how have you beenn"
+      ],
+      [
+        "en",
+        "how are ya"
+      ],
+      [
+        "en",
+        "bonjiour"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "agent.greeting": [
+          {
+            "answer": "Good to meet ya, rookie"
+          },
+          {
+            "answer": "How ya been, champ?"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

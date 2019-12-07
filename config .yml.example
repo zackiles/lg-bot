@@ -1,0 +1,23 @@
+# A list of all seasons from each respective league to use for the stats and player database
+# Leagues available are XBOX-NHL, XBOX-AHL, XBOX-CHL, PS-NHL, PS-AHL, PS-CHL
+seasons:
+  XBOX-NHL:
+    - '32'
+    - '33'
+    - '34'
+  XBOX-AHL:
+    - '32'
+    - '33'
+    - '34'
+  XBOX-CHL:
+    - '32'
+    - '33'
+    - '34'
+discord:
+  apiKey: ''
+  oauthUrl: ''
+mongo:
+  uri: 'mongodb://localhost/lg-bot'
+  options:
+    useUnifiedTopology: true
+    useNewUrlParser: true

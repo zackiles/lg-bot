@@ -1,0 +1,20 @@
+{
+  "name": "lg-bot",
+  "version": "0.0.1",
+  "description": "Discord bot for LeagueGaming.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^11.5.1",
+    "fetch-retry": "^2.2.3",
+    "mongoose": "^5.7.14",
+    "node-nlp": "^4.0.0-rc.4",
+    "yaml": "^1.7.2"
+  }
+}
