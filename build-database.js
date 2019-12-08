@@ -147,6 +147,14 @@ function chunkify(a, n, balanced) {
     console.log(`Total players found from all seasons and leagues is ${players.length}`)
     console.log(`Distributing players for workers to process from ${cpuCount} equal parts of ${playerChunks[0].length} players each`)
 
+    // cleanup after all the workers finish
+    setTimeout(() => {
+      if(!cluster.workers.length) {
+        console.log(`Finished! There were ${newPlayerCount} new players and ${newGameCount} games added`)
+        process.exit()
+      }
+    }, 5000)
+
     for (let i = 0; i < cpuCount; i++) {
       const worker = cluster.fork()
   
@@ -158,12 +166,9 @@ function chunkify(a, n, balanced) {
       worker.send({players : playerChunks[i]})
     }
   
-    cluster.on('death', (worker) => {
-      console.log('Worker', worker.pid, 'finished')
-    })
-
     process.on('SIGINT', () => {
       console.log(`Ending early! There were ${newPlayerCount} new players and ${newGameCount} games added`)
+      db.close()
       process.exit()
     })
 
@@ -201,6 +206,7 @@ function chunkify(a, n, balanced) {
         console.log(`Synced ${games.length} games for player ${player.id}`)
       }
       console.log(`Worker ${cluster.worker.id} exiting after processing games for ${players.length} players`)
+      db.close()
       process.exit()
     })
     await db.connect()
