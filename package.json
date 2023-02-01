@@ -13,7 +13,7 @@
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^11.5.1",
     "fetch-retry": "^2.2.3",
-    "mongoose": "^5.7.14",
+    "mongoose": "^5.13.15",
     "node-nlp": "^4.0.0-rc.4",
     "yaml": "^1.7.2"
   }
